@@ -25,6 +25,7 @@ pipeline {
         stage('Tests')
         
         {
+            parallel {
             agent {
             docker { image 'node:18-alpine'
                          reuseNode true
@@ -36,10 +37,11 @@ pipeline {
                 npm test
                 '''
             }
-                    post {
+                    /*post {
                 always {
                     junit 'jest-results/junit.xml'
                 }
+            }*/
             }
         }
         
