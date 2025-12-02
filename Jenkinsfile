@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        /*
+        
         stage('Build') {
             agent {
                 docker { image 'node:18-alpine'
@@ -34,8 +34,8 @@ pipeline {
                 npm test
                 '''
             }
-        }*/
-    stage('E2E')
+        }
+    /*stage('E2E')
         {
             agent {
             docker { image 'mcr.microsoft.com/playwright:v1.57.0-noble'
@@ -51,14 +51,14 @@ pipeline {
                 npx playwright test
                 '''
             }
-        }
+        }*/
 
     }
     
-   /*post {
+   post {
         always {
             junit 'jest-results/junit.xml'
         }
-    }*/
+    }
 
 }
