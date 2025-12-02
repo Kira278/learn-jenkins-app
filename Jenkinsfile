@@ -41,6 +41,7 @@ pipeline {
                 }
             }
         }
+        }
 
     }
     /*stage('E2E')
@@ -61,7 +62,7 @@ pipeline {
             }
         }*/
 
-    }
+    
     
    post {
         always {
