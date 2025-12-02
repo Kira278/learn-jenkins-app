@@ -21,7 +21,7 @@ pipeline {
                 '''
             }
         }*/
-        parallel{
+       
         stage('Tests')
         {
             agent {
@@ -41,7 +41,7 @@ pipeline {
                 }
             }
         }
-        }
+        
 
     }
     /*stage('E2E')
