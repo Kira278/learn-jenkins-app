@@ -21,8 +21,12 @@ pipeline {
                 '''
             }
         }*/
-       
-        stage('Tests')
+
+
+        stage('Parallel Run'){
+            parallel {
+
+                 stage('Tests')
         
         {
             agent {
@@ -42,6 +46,11 @@ pipeline {
                 }
             }
         }
+
+            }
+        }
+       
+       
         
         
 
