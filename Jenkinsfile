@@ -42,7 +42,7 @@ pipeline {
         }
 
             
-        }
+        
        
        stage('Deploy')
        {
@@ -61,6 +61,7 @@ pipeline {
     }
 
        }
+    }
         
         
 
