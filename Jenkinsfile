@@ -17,7 +17,7 @@ pipeline {
 /*ls -la*/
 
             steps {
-                cleanWs()
+                
                 sh '''
                 
                 node --version
