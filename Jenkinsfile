@@ -21,7 +21,7 @@ pipeline {
             }
 /*ls -la
 npm ci
-npm run build*/
+npm run build
 
             steps {
                 
@@ -33,22 +33,8 @@ npm run build*/
                 
                 '''
             }
-        }
-        stage('Tests')
-        {
-            agent {
-            docker { image 'node:18-alpine'
-                         reuseNode true
-                         }
-            }
-            steps{
-                sh '''
-                test -f build/index.html
-                npm test
-                '''
-            }
-                  
-        }
+        }*/
+       
 
             
         
@@ -74,6 +60,22 @@ npm run build*/
         
         '''
     }
+
+     stage('Tests')
+        {
+            agent {
+            docker { image 'node:18-alpine'
+                         reuseNode true
+                         }
+            }
+            steps{
+                sh '''
+                test -f build/index.html
+                npm test
+                '''
+            }
+                  
+        }
 /*node_modules/.bin/netlify deploy --dir=build --prod*/
        }
     }
