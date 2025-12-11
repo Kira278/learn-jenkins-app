@@ -53,7 +53,7 @@ npm run build
        {
         agent {
                 docker { image 'node:18-alpine'
-                         reuseNode 
+                          
                          }
        }
     steps 
