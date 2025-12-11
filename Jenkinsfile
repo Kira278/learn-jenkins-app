@@ -1,10 +1,6 @@
 pipeline {
-    agent 
-    {
-                docker { image 'node:18-alpine'
-                         
-                         }
-    }
+    agent any
+    
 
     environment {
         NETLIFY_SITE_ID = '3016f48d-e387-4382-823e-0e30e21da3c7'
@@ -57,7 +53,7 @@ npm run build
        {
         agent {
                 docker { image 'node:18-alpine'
-                         reuseNode true
+                         reuseNode 
                          }
        }
     steps 
