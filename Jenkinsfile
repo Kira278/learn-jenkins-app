@@ -9,20 +9,20 @@ pipeline {
 
     stages {
         
-        /*stage('Build') {
+        stage('Build') {
             agent {
                 docker { image 'node:18-alpine'
                          reuseNode true
                          }
             }
-ls -la
-npm ci
-npm run build
+/*ls -la*/
+
 
             steps {
                 
                 sh '''
-                
+                npm ci
+                npm run build
                 node --version
                 npm --version
                 
@@ -44,7 +44,7 @@ npm run build
                 '''
             }
                   
-        }*/
+        }
 
             
         
@@ -59,8 +59,6 @@ npm run build
     steps 
     {
         sh'''
-        npm ci
-        npm run build
         npm install netlify-cli
         node_modules/.bin/netlify --version
         echo "Deploying to production, Site id: $NETLIFY_SITE_ID"
