@@ -51,6 +51,8 @@ pipeline {
                 timeout(1) {
     input 'Ready to deploy?'
 }
+            }
+            }
         
        
        stage('Deploy')
