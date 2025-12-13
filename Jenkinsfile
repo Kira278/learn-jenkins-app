@@ -25,12 +25,16 @@ pipeline {
                 npm run build
                 node --version
                 npm --version
+
+                test -f build/index.html
+                npm test
+                echo "build and test has worked"
                 
                 
                 '''
             }
         }
-        stage('Tests')
+       /* stage('Tests')
         {
             agent {
             docker { image 'node:18-alpine'
@@ -44,7 +48,7 @@ pipeline {
                 '''
             }
                   
-        }
+        }*/
 
             stage('Approval') {
             steps {
