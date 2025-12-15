@@ -62,7 +62,7 @@ pipeline {
        stage('Deploy')
        {
         agent {
-                docker { image 'my-nodejs'
+                docker { image 'node:18-alpine'
                 reuseNode true
                           
                          }
@@ -71,10 +71,10 @@ pipeline {
     {
         sh'''
         
-        netlify --version
+        node_modules/.bin/netlify --version
         echo "Deploying to production, Site id: $NETLIFY_SITE_ID"
-        netlify status 
-      
+        node_modules/.bin/netlify status 
+        
        
          
         
