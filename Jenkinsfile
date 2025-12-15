@@ -17,13 +17,13 @@ pipeline {
             }
         }
         
-        stage('Build') {
+        /*stage('Build') {
             agent {
                 docker { image 'node:18-alpine'
                          reuseNode true
                          }
             }
-/*ls -la*/
+
 
 
             steps {
@@ -54,7 +54,7 @@ pipeline {
                 '''
             }
                   
-        }
+        }*/
 
             
         
