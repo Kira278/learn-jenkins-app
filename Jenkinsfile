@@ -59,7 +59,7 @@ pipeline {
             
         
        
-       stage('Deploy')
+      /* stage('Deploy')
        {
         agent {
                 docker { image 'node:18-bullseye'
@@ -79,7 +79,7 @@ pipeline {
         
         
         '''
-    }
+    }*/
 /* npm install netlify-cli
  node_modules/.bin/netlify deploy --dir=build --prod */
        }
