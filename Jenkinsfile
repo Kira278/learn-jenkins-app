@@ -17,7 +17,7 @@ pipeline {
             }
         }
         
-        /*stage('Build') {
+        stage('Build') {
             agent {
                 docker { image 'node:18-alpine'
                          reuseNode true
@@ -54,15 +54,15 @@ pipeline {
                 '''
             }
                   
-        }*/
+        }
 
             
         
        
-      /* stage('Deploy')
+       stage('Deploy')
        {
         agent {
-                docker { image 'node:18-bullseye'
+                docker { image 'my-nodejs'
                 reuseNode true
                           
                          }
@@ -74,12 +74,13 @@ pipeline {
         node_modules/.bin/netlify --version
         echo "Deploying to production, Site id: $NETLIFY_SITE_ID"
         node_modules/.bin/netlify status 
+        node_modules/.bin/netlify deploy --dir=build --prod
        
          
         
         
         '''
-    }*/
+    }
  /* npm install netlify-cli
  node_modules/.bin/netlify deploy --dir=build --prod */
        }
@@ -108,10 +109,10 @@ pipeline {
 
     
     
-   /*post {
+   post {
         always {
             junit 'jest-results/junit.xml'
         }
-    }*/
+    }
 
 }
